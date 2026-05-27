@@ -1,0 +1,69 @@
+.shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.main {
+  overflow-y: auto;
+  padding: 32px 40px;
+  padding-bottom: 100px; /* space for bottom bar on mobile */
+}
+
+.bottomBar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .main {
+    padding: 16px 16px 90px;
+    overflow-y: auto;
+  }
+
+  .bottomBar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-default);
+    z-index: 100;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 4px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .bottomBarItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 10px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 500;
+    transition: all 0.15s;
+    min-width: 52px;
+  }
+
+  .bottomBarItemActive {
+    color: var(--accent-blue);
+  }
+
+  .bottomBarIcon {
+    font-size: 18px;
+    line-height: 1;
+  }
+}

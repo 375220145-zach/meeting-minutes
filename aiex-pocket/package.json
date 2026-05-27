@@ -1,0 +1,15 @@
+{
+  "name": "ai-execution-pocket",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm -w packages/backend run dev",
+    "dev:frontend": "npm -w packages/frontend run dev",
+    "build": "npm -w packages/frontend run build",
+    "lint": "npm -w packages/frontend run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
