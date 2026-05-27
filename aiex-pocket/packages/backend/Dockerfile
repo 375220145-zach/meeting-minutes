@@ -8,9 +8,6 @@ COPY src/ src/
 
 RUN npm install
 
-ENV PORT=3000
-ENV CORS_ORIGIN=*
-
 EXPOSE 3000
 
-CMD ["npx", "tsx", "src/index.ts"]
+CMD ["./node_modules/.bin/tsx", "src/index.ts"]
